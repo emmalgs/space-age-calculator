@@ -26,9 +26,14 @@ function yearsSinceAge(e) {
     p.innerText = `Please enter an age less than your current age`;
     return form.append(p);
   }
-  form.querySelector("p").remove();
-  let spaceAge = new SpaceAge(age - years);
-  displayPlanets(spaceAge);
+  if (!form.contains(form.querySelector("p"))) {
+    let spaceAge = new SpaceAge(age - years);
+    displayPlanets(spaceAge);
+  } else {
+    form.querySelector("p").remove();
+    let spaceAge = new SpaceAge(age - years);
+    displayPlanets(spaceAge);
+  }
 }
 
 function yearsUntilAge(e) {
