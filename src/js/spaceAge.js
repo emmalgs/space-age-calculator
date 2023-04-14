@@ -2,12 +2,24 @@ export default class SpaceAge {
   constructor(earthYears) {
     this.earthYears = earthYears;
     this.mercuryAge = this.mercuryYears(earthYears);
-    this.venusAge = parseFloat((this.earthYears / 0.62).toFixed(2));
-    this.marsAge = parseFloat((this.earthYears / 1.88).toFixed(2));
-    this.jupiterAge = parseFloat((this.earthYears / 11.86).toFixed(2));
+    this.venusAge = this.venusYears(earthYears);
+    this.marsAge = this.marsYears(earthYears);
+    this.jupiterAge = this.jupiterYears(earthYears);
   }
 
   mercuryYears(years) {
     return parseFloat((years / 0.24).toFixed(2));
+  }
+
+  venusYears(years) {
+    return parseFloat((years / 0.62).toFixed(2));
+  }
+
+  marsYears(years) {
+    return parseFloat((years / 1.88).toFixed(2));
+  }
+
+  jupiterYears(years) {
+    return parseFloat((years / 11.86).toFixed(2));
   }
 }
