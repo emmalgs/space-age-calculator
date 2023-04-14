@@ -1,6 +1,7 @@
 import './css/styles.css';
 import SpaceAge from "./js/spaceAge";
 
+
 function displayBigNums(number) {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
