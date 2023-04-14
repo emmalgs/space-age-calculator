@@ -8,11 +8,43 @@ function displayPlanets(age) {
   const marsDiv = document.getElementById("mars");
   const jupiterDiv = document.getElementById("jupiter");
 
-  mercuryDiv.querySelector("p").innerText = age.mercuryAge;
-  venusDiv.querySelector("p").innerText = age.venusAge;
-  earthDiv.querySelector("p").innerText = age.earthYears;
-  marsDiv.querySelector("p").innerText = age.marsAge;
-  jupiterDiv.querySelector("p").innerText = age.jupiterAge;
+  mercuryDiv.querySelector("p").innerText = `${age.mercuryAge} years`;
+  venusDiv.querySelector("p").innerText = `${age.venusAge} years`;
+  earthDiv.querySelector("p").innerText = `${age.earthYears} years`;
+  marsDiv.querySelector("p").innerText = `${age.marsAge} years`;
+  jupiterDiv.querySelector("p").innerText = `${age.jupiterAge} years`;
+}
+
+function yearsSinceAge(e) {
+  e.preventDefault();
+  const age = parseInt(document.getElementById("earth-age").value);
+  const years = parseInt(document.getElementById("past-bday").value);
+  const form = document.getElementById("past-bday-form");
+  const p = document.createElement("p");
+
+  if (years > age) {
+    p.innerText = `Please enter an age less than your current age`;
+    return form.append(p);
+  }
+  form.querySelector("p").remove();
+  let spaceAge = new SpaceAge(age - years);
+  displayPlanets(spaceAge);
+}
+
+function yearsUntilAge(e) {
+  e.preventDefault();
+  const age = parseInt(document.getElementById("earth-age").value);
+  const years = parseInt(document.getElementById("until-bday").value);
+  const form = document.getElementById("until-bday-form");
+  const p = document.createElement("p");
+
+  if (years < age) {
+    p.innerText = `Please enter an age greater than your current age`;
+    return form.append(p);
+  }
+  form.querySelector("p").remove();
+  let spaceAge = new SpaceAge(years - age);
+  displayPlanets(spaceAge);
 }
 
 function handleAgeSubmit(e) {
@@ -21,7 +53,7 @@ function handleAgeSubmit(e) {
   let spaceAge = new SpaceAge(earthAge);
   let forms = document.querySelectorAll("div.age-form");
   forms.forEach((form) => {
-    form.classList.remove("hidden")
+    form.classList.remove("hidden");
   });
   displayPlanets(spaceAge);
 }
@@ -29,3 +61,5 @@ function handleAgeSubmit(e) {
 
 
 document.getElementById("earth-age-form").addEventListener("submit", handleAgeSubmit);
+document.getElementById("past-bday-form").addEventListener("submit", yearsSinceAge);
+document.getElementById("until-bday-form").addEventListener("submit", yearsUntilAge);
