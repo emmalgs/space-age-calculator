@@ -5,6 +5,7 @@ export default class SpaceAge {
     this.venusAge = this.venusYears(earthYears);
     this.marsAge = this.marsYears(earthYears);
     this.jupiterAge = this.jupiterYears(earthYears);
+    this.mayflies = this.mayflyLives(earthYears);
   }
 
   mercuryYears(years) {
@@ -21,5 +22,10 @@ export default class SpaceAge {
 
   jupiterYears(years) {
     return parseFloat((years / 11.86).toFixed(2));
+  }
+
+  mayflyLives(years) {
+    let minutes = 525600;
+    return (years * minutes) / 5
   }
 }

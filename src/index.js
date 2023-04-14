@@ -1,6 +1,10 @@
 import './css/styles.css';
 import SpaceAge from "./js/spaceAge";
 
+function displayBigNums(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 function displayPlanets(age) {
   const mercuryDiv = document.getElementById("mercury");
   const venusDiv = document.getElementById("venus");
@@ -62,9 +66,26 @@ function checkForErrorParagraph(form, years) {
   }
 }
 
+function deployMayflies() {
+  const div = document.getElementById("mayfly-popup");
+  div.classList.remove("hidden");
+
+  const years = parseInt(document.getElementById("earth-age").value);
+  if (isNaN(years)) {
+    return false
+  }
+  let spaceAge = new SpaceAge(years);
+
+  const mayflies = spaceAge.mayflies;
+  div.querySelector("p").innerText = `${displayBigNums(mayflies)} mayflies have come and gone since your birth. We are time-beings. Fly free, little mayfly.`
+}
+
 function handleAgeSubmit(e) {
   e.preventDefault();
   const earthAge = document.getElementById("earth-age").value;
+  if (isNaN(parseInt(earthAge))) {
+    return false;
+  }
   let spaceAge = new SpaceAge(earthAge);
   let forms = document.querySelectorAll("div.age-form");
   forms.forEach((form) => {
@@ -76,3 +97,4 @@ function handleAgeSubmit(e) {
 document.getElementById("earth-age-form").addEventListener("submit", handleAgeSubmit);
 document.getElementById("past-bday-form").addEventListener("submit", yearsSinceAge);
 document.getElementById("until-bday-form").addEventListener("submit", yearsUntilAge);
+document.getElementById("mayfly").addEventListener("click", deployMayflies);
