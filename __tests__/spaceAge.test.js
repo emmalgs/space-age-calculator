@@ -38,4 +38,10 @@ describe('SpaceAge', () => {
   test('should calculate Marcury years when earth years are passed as argument', () => {
     expect(spaceAge.mercuryYears(12)).toEqual(50.00);
   });
+
+  test('should have methods for Venus, Mars and Jupieter that return correct year when earth years argument passed', () => {
+    expect(spaceAge.marsYears(12)).toEqual(6.38);
+    expect(spaceAge.venusYears(12)).toEqual(19.35);
+    expect(spaceAge.jupiterYears(12)).toEqual(1.01);
+  });
 });
