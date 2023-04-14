@@ -24,4 +24,10 @@ describe('SpaceAge', () => {
   test('should accurately calculate mars years based on earth years', () => {
     expect(spaceAge.marsAge).toEqual(17.02);
   });
+
+  test('should have properties for Mercury, Venus, and Jupiter that calculate the human age on each planet based on earthYears', () => {
+    expect(spaceAge.mercuryAge).toEqual(133.33);
+    expect(spaceAge.venusAge).toEqual(51.61);
+    expect(spaceAge.jupiterAge).toEqual(2.70);
+  });
 });
