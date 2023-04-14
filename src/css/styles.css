@@ -1,13 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Oi&family=PT+Mono&family=Righteous&family=Unbounded:wght@300;800&display=swap');
+
+:root {
+  --yellow1: #fbbf24;
+  --yellow2: #ea580c;
+  --blue1: #38bdf8;
+  --blue2: #0369a1;
+  --dark: #082f49;
+  --pink: #fee2e2;
+  --neutral: #a8a29e;
+  --header-font: Unbounded;
+  --body-font: Abel;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: navy;
-  color: yellow;
+  background-color: var(--blue1);
+  color: var(--yellow2);
+  font-family: var(--body-font);
+}
+
+.circle1 {
+  position: absolute;
+  z-index: -1;
+  left: -220px;
+  top: -100px;
+  width: 65%;
+  height: 200%;
+  border-radius: 50%;
+  background-color: var(--blue2);
+}
+
+.circle2 {
+  position: absolute;
+  z-index: -1;
+  right: -220px;
+  top: 100px;
+  width: 65%;
+  height: 100%;
+  border-radius: 50% 20% 10% 50%;
+  background-color: var(--pink);
+}
+
+h1 {
+  font-family: var(--header-font);
+  color: var(--yellow1);
+  text-shadow: -2px 2px 3px var(--yellow2),
+      2px -2px 3px var(--yellow2),
+      2px 2px 3px var(--yellow2),
+      -2px -2px 3px var(--yellow2);
+  text-transform: uppercase;
+  font-size: 5em;
+  text-align: center;
+}
+
+#earth-age-form {
+  width: 40%;
+  margin: auto;
 }
 
 .planet-container {
   display: flex;
   justify-content: space-evenly;
+  gap: 12px;
+  padding: .5em;
+  margin: 1em;
 }
+
+.planet-container > div {
+  background-color: black;
+  border-radius: 20px;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.planet-container > div > img {
+  width: 95%;
+  padding: 1em;
+}
+
