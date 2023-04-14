@@ -49,6 +49,17 @@ module.exports = {
           'html-loader'
         ]
       },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'svg-loader',
+            options: {
+              // configure options here
+            }
+          }
+        ]
+      }
     ]
   }
 };
