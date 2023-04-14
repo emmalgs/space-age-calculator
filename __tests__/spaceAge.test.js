@@ -30,4 +30,8 @@ describe('SpaceAge', () => {
     expect(spaceAge.venusAge).toEqual(51.61);
     expect(spaceAge.jupiterAge).toEqual(2.70);
   });
+
+  test('should have a method to calculate Mercury years that returns 0 when called with 0 as the argument', () => {
+    expect(spaceAge.mercuryYears(0)).toEqual(0);
+  })
 });

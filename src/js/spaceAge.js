@@ -6,4 +6,8 @@ export default class SpaceAge {
     this.marsAge = parseFloat((this.earthYears / 1.88).toFixed(2));
     this.jupiterAge = parseFloat((this.earthYears / 11.86).toFixed(2));
   }
+
+  mercuryYears(years) {
+
+  }
 }
