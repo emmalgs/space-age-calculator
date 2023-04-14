@@ -16,9 +16,14 @@ describe('SpaceAge', () => {
   test('should take an earthYears argument and return when property earthYears is called', () => {
     expect(spaceAge.earthYears).toEqual(32);
   });
-  
-    test('should have a method to calculate mars years and return a number', () => {
-      let marsAge = spaceAge.marsAge();
-      expect(marsAge).toEqual(Number(marsAge));
+
+  test('should have a method to calculate mars years and return a number', () => {
+    let marsAge = spaceAge.marsAge();
+    expect(marsAge).toEqual(Number(marsAge));
+  });
+
+  test('should accurately calculate mars years based on earth years', () => {
+    let marsAge = spaceAge.marsAge();
+    expect(marsAge).toEqual(17.02);
   });
 });

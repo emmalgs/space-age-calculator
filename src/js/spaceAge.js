@@ -4,6 +4,6 @@ export default class SpaceAge {
   }
 
   marsAge() {
-    return this.earthYears;
+    return parseFloat((this.earthYears / 1.88).toFixed(2));
   }
 }
