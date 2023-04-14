@@ -15,7 +15,7 @@ function displayPlanets(age) {
   const marsDiv = document.getElementById("mars");
   const jupiterDiv = document.getElementById("jupiter");
 
-  mercuryDiv.innerText = age.mercuryAge;
+  mercuryDiv.querySelector("p").innerText = age.mercuryAge;
   venusDiv.innerText = age.venusAge;
   earthDiv.innerText = age.earthYears;
   marsDiv.innerText = age.marsAge;
