@@ -26,14 +26,11 @@ function yearsSinceAge(e) {
     p.innerText = `Please enter an age less than your current age`;
     return form.append(p);
   }
-  if (!form.contains(form.querySelector("p"))) {
-    let spaceAge = new SpaceAge(age - years);
-    displayPlanets(spaceAge);
-  } else {
-    form.querySelector("p").remove();
-    let spaceAge = new SpaceAge(age - years);
-    displayPlanets(spaceAge);
-  }
+
+  let yearDif = age - years;
+  checkForErrorParagraph(form, yearDif);
+
+  document.getElementById("past-bday").value = null;
 }
 
 function yearsUntilAge(e) {
@@ -47,9 +44,22 @@ function yearsUntilAge(e) {
     p.innerText = `Please enter an age greater than your current age`;
     return form.append(p);
   }
-  form.querySelector("p").remove();
-  let spaceAge = new SpaceAge(years - age);
-  displayPlanets(spaceAge);
+
+  let yearDif = years - age;
+  checkForErrorParagraph(form, yearDif);
+  
+  document.getElementById("until-bday").value = null;
+}
+
+function checkForErrorParagraph(form, years) {
+  if (!form.contains(form.querySelector("p"))) {
+    let spaceAge = new SpaceAge(years);
+    displayPlanets(spaceAge);
+  } else {
+    form.querySelector("p").remove();
+    let spaceAge = new SpaceAge(years);
+    displayPlanets(spaceAge);
+  }
 }
 
 function handleAgeSubmit(e) {
