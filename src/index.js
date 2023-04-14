@@ -16,10 +16,10 @@ function displayPlanets(age) {
   const jupiterDiv = document.getElementById("jupiter");
 
   mercuryDiv.querySelector("p").innerText = age.mercuryAge;
-  venusDiv.innerText = age.venusAge;
-  earthDiv.innerText = age.earthYears;
-  marsDiv.innerText = age.marsAge;
-  jupiterDiv.innerText = age.jupiterAge;
+  venusDiv.querySelector("p").innerText = age.venusAge;
+  earthDiv.querySelector("p").innerText = age.earthYears;
+  marsDiv.querySelector("p").innerText = age.marsAge;
+  jupiterDiv.querySelector("p").innerText = age.jupiterAge;
 }
 
 document.getElementById("earth-age-form").addEventListener("submit", handleAgeSubmit);
