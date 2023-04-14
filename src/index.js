@@ -1,13 +1,6 @@
 import './css/styles.css';
 import SpaceAge from "./js/spaceAge";
 
-function handleAgeSubmit(e) {
-  e.preventDefault();
-  const earthAge = document.getElementById("earth-age").value;
-  let spaceAge = new SpaceAge(earthAge);
-  displayPlanets(spaceAge);
-}
-
 function displayPlanets(age) {
   const mercuryDiv = document.getElementById("mercury");
   const venusDiv = document.getElementById("venus");
@@ -21,5 +14,18 @@ function displayPlanets(age) {
   marsDiv.querySelector("p").innerText = age.marsAge;
   jupiterDiv.querySelector("p").innerText = age.jupiterAge;
 }
+
+function handleAgeSubmit(e) {
+  e.preventDefault();
+  const earthAge = document.getElementById("earth-age").value;
+  let spaceAge = new SpaceAge(earthAge);
+  let forms = document.querySelectorAll("div.age-form");
+  forms.forEach((form) => {
+    form.classList.remove("hidden")
+  });
+  displayPlanets(spaceAge);
+}
+
+
 
 document.getElementById("earth-age-form").addEventListener("submit", handleAgeSubmit);

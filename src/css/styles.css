@@ -16,6 +16,10 @@
   box-sizing: border-box;
 }
 
+.hidden {
+  display: none;
+}
+
 body {
   background-color: var(--blue1);
   color: var(--yellow2);
@@ -56,15 +60,17 @@ h1 {
   text-align: center;
 }
 
-#earth-age-form {
-  width: 40%;
+#earth-age-form,
+.form-container {
+  width: 450px;
   margin: auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 }
 
-#earth-age-form button {
+#earth-age-form button,
+.form-container button {
   border-style: none;
   font-family: var(--body-font);
   text-transform: uppercase;
@@ -74,13 +80,15 @@ h1 {
   color: var(--dark);
 }
 
-#earth-age-form button:hover {
+#earth-age-form button:hover,
+.form-container button:hover {
   background-color: var(--yellow2);
   box-shadow: 2px 2px 2px var(--dark);
   transition: 0.2s;
 }
 
-#earth-age-form input {
+#earth-age-form input,
+.form-container input {
   border-style: none;
   border-radius: 2px;
   width: 80px;
@@ -88,13 +96,31 @@ h1 {
   font-size: 1.8em;
 }
 
-#earth-age-form label {
+#earth-age-form label,
+.form-container label {
   font-size: 1.8em;
   text-transform: uppercase;
   align-self: center;
   color: var(--dark);
   font-weight: bolder;
 }
+
+.form-container {
+  width: 50%;
+}
+
+.form-container form {
+  background-color: var(--neutral);
+  margin: 1.2em;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  border-radius: 20px;
+  font-size: .8em;
+}
+
 
 .planet-container {
   display: flex;
