@@ -8,6 +8,6 @@ export default class SpaceAge {
   }
 
   mercuryYears(years) {
-
+    return 0
   }
 }
