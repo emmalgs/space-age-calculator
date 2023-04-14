@@ -1,5 +1,5 @@
 export default class Birthdays {
-  constructor() {
-    
+  constructor(day, month, year) {
+    this.earthBirthday = new Date(year, month, day);
   }
 }
