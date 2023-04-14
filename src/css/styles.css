@@ -26,7 +26,8 @@ body {
   font-family: var(--body-font);
 }
 
-.circle1 {
+.circle1,
+.circle3 {
   position: absolute;
   z-index: -1;
   left: -220px;
@@ -35,6 +36,13 @@ body {
   height: 200%;
   border-radius: 50%;
   background-color: var(--pink);
+}
+
+.circle3 {
+  z-index: -2;
+  background-color: var(--blue1);
+  width: 72%;
+  border: 40px dotted var(--yellow2);
 }
 
 .circle2 {
@@ -46,6 +54,30 @@ body {
   height: 100%;
   border-radius: 50% 20% 10% 50%;
   background-color: var(--blue2);
+}
+
+#mayfly {
+  position: relative;
+  top: 30%;
+  left: 80%;
+  transform-origin: 200% center;
+  background-color: var(--yellow2);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  animation: rotate 3s linear reverse infinite;
+  cursor: pointer;
+}
+
+#mayfly:before {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  animation: rotate 3s linear reverse infinite;
+}
+
+#mayfly img {
+  width: 98%;
 }
 
 h1 {
@@ -140,7 +172,18 @@ h1 {
 }
 
 .planet-container > div > img {
-  width: 95%;
+  height: 20vh;
+  width: auto;
   padding: 1em;
 }
 
+.planet-container h4 {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  color: var(--yellow1);
+}
+
+
+@keyframes rotate { 100% {
+  transform:rotate(-360deg);
+}}

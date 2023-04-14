@@ -73,8 +73,6 @@ function handleAgeSubmit(e) {
   displayPlanets(spaceAge);
 }
 
-
-
 document.getElementById("earth-age-form").addEventListener("submit", handleAgeSubmit);
 document.getElementById("past-bday-form").addEventListener("submit", yearsSinceAge);
 document.getElementById("until-bday-form").addEventListener("submit", yearsUntilAge);
