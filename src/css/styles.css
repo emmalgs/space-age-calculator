@@ -164,6 +164,7 @@ h1 {
   gap: 1em;
   border-radius: 20px;
   font-size: .8em;
+  box-shadow: 2px 2px 5px var(--dark);
 }
 
 
@@ -194,6 +195,18 @@ h1 {
   text-transform: uppercase;
   font-size: 1.2em;
   color: var(--yellow1);
+}
+
+footer {
+  z-index: -1;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 110vw;
+  padding: 10px;
+  background-color: var(--yellow2);
+  color: var(--dark);
+  
 }
 
 
