@@ -1,8 +1,12 @@
 # Planetary Ager
 
+#### By Emma Gerigscott
+
+![moving image of planet ager webpage](./src/assets/images/sample.gif)
+
 #### Discover your age on a few of our local planets
 
-#### By Emma Gerigscott
+
 
 ## Technologies Used
 
