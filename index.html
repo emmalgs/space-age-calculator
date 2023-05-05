@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Age Calculator!</title>
+</head>
+<body>
+  <h1>Planetary Age</h1>
+
+  <div class="circle1"></div>
+  <div class="circle3"></div>
+  <div class="circle2"></div>
+
+  <div id="mayfly">
+    <img src="assets/images/mayfly.png" alt="mayfly">
+  </div>
+  <div id="mayfly-popup" class="hidden">
+    <p></p>
+  </div>
+
+  <div class="age-form">
+    <form id="earth-age-form">
+      <label for="earth-age">Your Earth Age:</label>
+      <input type="number" name="earth-age" id="earth-age">
+      <button type="submit">Agify Me!</button>
+    </form>
+  </div>
+
+  <div class="form-container">
+    <div class="age-form hidden">
+      <form id="past-bday-form">
+        <label for="past-bday">Years Since Age:</label>
+        <input type="number" name="past-bday" id="past-bday">
+        <button type="submit">How Long Ago?</button>
+      </form>
+    </div>
+    <div class="age-form hidden">
+      <form id="until-bday-form">
+        <label for="until-bday">Years Until Age:</label>
+        <input type="number" name="until-bday" id="until-bday">
+        <button type="submit">How Long Until?</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="planet-container">
+    <div id="mercury">
+      <h4>Mercury</h4>
+      <img src="assets/images/mercury.gif" alt="mercury gif">
+      <p></p>
+    </div>
+    <div id="venus">
+      <h4>Venus</h4>
+      <img src="assets/images/venus.gif" alt="venus gif">
+      <p></p>
+    </div>
+    <div id="earth">
+      <h4>Earth</h4>
+      <img src="assets/images/earth.gif" alt="earth gif">
+      <p></p>
+    </div>
+    <div id="mars">
+      <h4>Mars</h4>
+      <img src="assets/images/mars.gif" alt="mars gif">
+      <p></p>
+    </div>
+    <div id="jupiter">
+      <h4>Jupiter</h4>
+      <img src="assets/images/jupiter.gif" alt="jupiter gif">
+      <p></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>copyright 2023 Emma Gerigscott</p>
+  </footer>
+
+<script src="bundle.js"></script></body>
+</html>
